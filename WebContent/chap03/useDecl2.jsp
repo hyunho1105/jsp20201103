@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%!
+	public int add(int a, int b) {
+		int c = a + b;
+		return c;
+	}
+	public int subtract(int a, int b) {
+		int c = a - b;
+		return c;
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,69 +22,14 @@
 </head>
 <body>
 <%
-for(int i = 0 ; i < 5; i++) {
-%>
-
-
-<h1>Lorem ipsum dolor.</h1>
-<% 
-}
-%>
-<%
-java.util.List<String> list = new java.util.ArrayList<>();
-list.add("java");
-list.add("jsp");
-list.add("spring");
-list.add("dbms");
-%>
-<ul>
-<%
-for(String item: list) {
-%>
-<li>
-<%out.print(item);%>
-</li>
-<% 
-}
-%>
-</ul>
-
-<%
-boolean danger = false;
-%>
-<%
-if (danger) {
-%>
-<h1 class ="text-danger"> DANGER!!!</h1>
-<%
-}else {
-%>
-<h1 class = "text-info">INFO~~~</h1>
-<% 
-}
-%>
-<% 
-for(int i = 0; i <= 5; i++ ){
-	for(int j =0; j <= i; j++){
-%>
-	<%out.print("*"); %>
-<% 
-	}
-%>
-<br>
-<%
-}
-%>		
+	int value1 = 3;
+	int value2 = 9;
 	
-
-
-
-
-
-
-
-
-
-
+	int addResult = add(value1, value2);
+	int subtractResult = subtract(value1, value2);
+%>
+<%= value1 %> + <%=value2 %> = <%=addResult %>
+<br>
+<%= value1 %> - <%=value2 %> = <%=addResult %>
 </body>
 </html>

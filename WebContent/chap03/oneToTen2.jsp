@@ -11,70 +11,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-for(int i = 0 ; i < 5; i++) {
-%>
-
-
-<h1>Lorem ipsum dolor.</h1>
-<% 
-}
-%>
-<%
-java.util.List<String> list = new java.util.ArrayList<>();
-list.add("java");
-list.add("jsp");
-list.add("spring");
-list.add("dbms");
-%>
-<ul>
-<%
-for(String item: list) {
-%>
-<li>
-<%out.print(item);%>
-</li>
-<% 
-}
-%>
-</ul>
-
-<%
-boolean danger = false;
-%>
-<%
-if (danger) {
-%>
-<h1 class ="text-danger"> DANGER!!!</h1>
-<%
-}else {
-%>
-<h1 class = "text-info">INFO~~~</h1>
-<% 
-}
-%>
-<% 
-for(int i = 0; i <= 5; i++ ){
-	for(int j =0; j <= i; j++){
-%>
-	<%out.print("*"); %>
-<% 
-	}
-%>
-<br>
-<%
-}
-%>		
-	
-
-
-
-
-
-
-
-
-
-
+1부터 10까지의 합은
+<%= 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 %>
+입니다.
 </body>
 </html>
