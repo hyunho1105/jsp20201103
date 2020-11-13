@@ -4,7 +4,13 @@
 <%@ page import="chap14.EmployeeDao" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <%
-List<String> list = EmployeeDao.listEmployeeName();
+	String name = request.getParameter("name").toUpperCase();
+	
+	if (name == null) {
+		name = "";
+	}
+	
+	List<String> list = EmployeeDao.getNameLike(name);
 %>
 <!DOCTYPE html>
 <html>
@@ -17,11 +23,23 @@ List<String> list = EmployeeDao.listEmployeeName();
 <title>Insert title here</title>
 </head>
 <body>
-<h1>직원 리스트</h1>
+<h1>검색된 이름</h1>
 <%
-	for(String name : list) {
+	if(list.size() > 0) {
 %>
-	<li><%= name%></li>
+<ul>
+<% 
+		for (String n : list) {
+%>
+		<li><%= n %></li>
+<%		
+		}
+%>
+</ul>
+<%
+	} else {
+%>
+<h2>검색된 이름 없음</h2>
 <%
 	}
 %>
