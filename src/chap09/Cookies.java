@@ -16,7 +16,7 @@ public class Cookies {
 			for (int i = 0; i < cookies.length; i++) {
 				cookieMap.put(cookies[i].getName(),cookies[i]);
 			}
-		}
+		} 
 	}
 	
 	public Cookie getCookie(String name) {
