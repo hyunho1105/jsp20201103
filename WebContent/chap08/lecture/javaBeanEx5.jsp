@@ -2,7 +2,14 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
-<jsp:useBean id="member" scope="request" class="chap08.member.MemberInfo"/>
+<jsp:useBean id="car" class="chap08.Car"/>
+<%
+	//car.setName("kia");
+%>
+<jsp:setProperty property="name" name="car" value="kia"/>
+<jsp:setProperty property="speed" name="car" value="90"/>
+<%-- <jsp:setProperty property="stop" name="car" value="false"/> --%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,12 +18,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<title>인사말</title>
+<title>Insert title here</title>
 </head>
 <body>
-
-<%= member.getName() %> (<%= member.getId() %>) 회원님
-안녕하세요
-
+<%= car.getName() %>
+<%= car.getSpeed() %>
 </body>
 </html>
