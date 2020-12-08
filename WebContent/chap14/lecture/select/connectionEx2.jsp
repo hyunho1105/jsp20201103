@@ -12,9 +12,10 @@
 	Statement stmt = null;
 	ResultSet rs = null;
 
-	String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-	String id = "c##mydbms";
-	String pw = "admin";
+	//String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+	String url = "jdbc:oracle:thin:@mydb501_high?TNS_ADMIN=/Users/khh/Desktop/myworkspace/Wallet_mydb501";
+	String id = "mydb07";
+	String pw = "adminAdmin12";
 	con = DriverManager.getConnection(url, id, pw);
 	
 	stmt = con.createStatement();
